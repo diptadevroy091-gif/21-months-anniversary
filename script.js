@@ -5,7 +5,7 @@ javascript;
 
 function unlockSurprise() {
   // নিজের password এখানে বসাবে
-  const password = "dipta&moni457100";
+  const password = "dipta&moni457100432";
 
   const input = document.getElementById("passwordInput").value.trim();
 
