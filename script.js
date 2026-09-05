@@ -1,40 +1,42 @@
+javascript;
 /* =========================
    PASSWORD
 ========================= */
 
-// এখানে নিজের password বসাবে
-const correctPassword = "21062024";
-
 function unlockSurprise() {
-  const passwordInput = document.getElementById("passwordInput");
+  // নিজের password এখানে বসাবে
+  const password = "dipta&moni457100";
 
-  const password = passwordInput.value.trim();
+  const input = document.getElementById("passwordInput").value.trim();
+
+  const error = document.getElementById("errorMessage");
 
   const passwordScreen = document.getElementById("passwordScreen");
 
   const surpriseContent = document.getElementById("surpriseContent");
 
-  const errorMessage = document.getElementById("errorMessage");
-
-  if (password === correctPassword) {
+  if (input === password) {
     passwordScreen.style.display = "none";
 
     surpriseContent.classList.remove("hidden");
 
-    document.body.style.overflowY = "auto";
+    document.body.style.overflow = "auto";
 
-    createHeartExplosion();
+    error.textContent = "";
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   } else {
-    errorMessage.textContent = "Wrong password, my love 💔 Try again.";
+    error.textContent = "Wrong password ❤️ Try again.";
 
-    passwordInput.value = "";
-
-    passwordInput.focus();
+    document.getElementById("passwordInput").focus();
   }
 }
 
 /* =========================
-   ENTER KEY
+   ENTER KEY PASSWORD
 ========================= */
 
 document
@@ -46,74 +48,95 @@ document
   });
 
 /* =========================
-   IMAGE POPUP
+   SHOW / HIDE PASSWORD
 ========================= */
 
-const memoryImages = document.querySelectorAll(".image-wrapper img");
+function togglePassword() {
+  const passwordInput = document.getElementById("passwordInput");
 
-const imageModal = document.getElementById("imageModal");
+  const eyeButton = document.getElementById("eyeButton");
+
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+
+    eyeButton.textContent = "🙈";
+  } else {
+    passwordInput.type = "password";
+
+    eyeButton.textContent = "👁️";
+  }
+}
+
+/* =========================
+   MEMORY IMAGE POPUP
+========================= */
+
+const images = document.querySelectorAll(".image-wrapper img");
+
+const modal = document.getElementById("imageModal");
 
 const modalImage = document.getElementById("modalImage");
 
-memoryImages.forEach(function (image) {
+images.forEach(function (image) {
   image.addEventListener("click", function () {
-    modalImage.src = image.src;
+    modal.style.display = "flex";
 
-    imageModal.classList.add("active");
+    modalImage.src = image.src;
   });
 });
 
-function closeImage() {
-  imageModal.classList.remove("active");
+/* =========================
+   CLOSE IMAGE MODAL
+========================= */
+
+function closeModal() {
+  modal.style.display = "none";
 
   modalImage.src = "";
 }
 
-imageModal.addEventListener("click", function (event) {
-  if (event.target === imageModal) {
-    closeImage();
+/* =========================
+   CLOSE MODAL OUTSIDE IMAGE
+========================= */
+
+modal.addEventListener("click", function (event) {
+  if (event.target === modal) {
+    closeModal();
   }
 });
 
 /* =========================
-   HEART EXPLOSION
+   LOVE LETTER POPUP
 ========================= */
 
-function createHeartExplosion() {
-  const hearts = ["❤️", "💕", "💖", "💗", "💓", "💞"];
+function specialLove() {
+  const letterModal = document.getElementById("loveLetterModal");
 
-  for (let i = 0; i < 30; i++) {
-    const heart = document.createElement("div");
+  letterModal.style.display = "flex";
 
-    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-
-    heart.style.position = "fixed";
-
-    heart.style.left = Math.random() * 100 + "%";
-
-    heart.style.top = Math.random() * 100 + "%";
-
-    heart.style.fontSize = Math.random() * 25 + 15 + "px";
-
-    heart.style.pointerEvents = "none";
-
-    heart.style.zIndex = "10000";
-
-    heart.style.transition = "all 2s ease";
-
-    document.body.appendChild(heart);
-
-    setTimeout(function () {
-      heart.style.transform = `translate(
-          ${(Math.random() - 0.5) * 300}px,
-          ${(Math.random() - 0.5) * 300}px
-        ) scale(0)`;
-
-      heart.style.opacity = "0";
-    }, 50);
-
-    setTimeout(function () {
-      heart.remove();
-    }, 2200);
-  }
+  document.body.style.overflow = "hidden";
 }
+
+/* =========================
+   CLOSE LOVE LETTER
+========================= */
+
+function closeLoveLetter() {
+  const letterModal = document.getElementById("loveLetterModal");
+
+  letterModal.style.display = "none";
+
+  document.body.style.overflow = "auto";
+}
+
+/* =========================
+   CLOSE LETTER OUTSIDE
+========================= */
+
+document
+  .getElementById("loveLetterModal")
+  .addEventListener("click", function (event) {
+    if (event.target === this) {
+      closeLoveLetter();
+    }
+  });
