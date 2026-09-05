@@ -1180,3 +1180,88 @@ footer h3 {
     font-size: 19px;
   }
 }
+/* =========================
+   FLOATING MUSIC BUTTON
+========================= */
+
+.music-player {
+  position: fixed;
+
+  right: 14px;
+  bottom: 14px;
+
+  z-index: 5000;
+
+  width: 52px;
+  height: 52px;
+}
+
+.music-btn {
+  width: 52px;
+  height: 52px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #c7476e, #e66a91);
+
+  color: white;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 25px rgba(199, 71, 110, 0.4);
+
+  transition: 0.3s;
+}
+
+.music-btn:hover {
+  transform: scale(1.1);
+}
+
+.music-btn:active {
+  transform: scale(0.92);
+}
+
+/* গান চলার সময় */
+
+.music-player.playing .music-btn {
+  animation: musicPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .music-player {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .music-btn {
+    width: 48px;
+    height: 48px;
+
+    font-size: 20px;
+  }
+}
