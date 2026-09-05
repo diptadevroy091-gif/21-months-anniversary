@@ -1,0 +1,707 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #fff5f7;
+  color: #35131b;
+  overflow-x: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   PASSWORD SCREEN
+========================= */
+
+.password-screen {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background:
+    radial-gradient(circle at top left, #ffd6df, transparent 35%),
+    radial-gradient(circle at bottom right, #ffc0ce, transparent 35%), #fff5f7;
+}
+
+.password-box {
+  width: 100%;
+  max-width: 450px;
+
+  padding: 50px 35px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  border: 1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 30px;
+
+  box-shadow: 0 25px 70px rgba(91, 22, 42, 0.15);
+
+  backdrop-filter: blur(15px);
+
+  animation: boxAppear 1s ease;
+}
+
+.lock {
+  font-size: 55px;
+  margin-bottom: 20px;
+}
+
+.password-box h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.password-box > p {
+  line-height: 1.7;
+  color: #79535d;
+  margin-bottom: 25px;
+}
+
+.password-box input {
+  width: 100%;
+
+  padding: 16px 20px;
+
+  border: 2px solid #f4c2cc;
+  border-radius: 50px;
+
+  outline: none;
+
+  font-size: 16px;
+
+  text-align: center;
+
+  margin-bottom: 15px;
+
+  transition: 0.3s;
+}
+
+.password-box input:focus {
+  border-color: #e85d75;
+  box-shadow: 0 0 0 4px rgba(232, 93, 117, 0.1);
+}
+
+.password-box button {
+  width: 100%;
+
+  padding: 16px;
+
+  border: none;
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #e84f6b, #b91d45);
+
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.password-box button:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 12px 25px rgba(185, 29, 69, 0.3);
+}
+
+.error {
+  color: #d62839 !important;
+
+  font-size: 14px !important;
+
+  margin-top: 15px;
+
+  min-height: 20px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 20% 20%, #ffdce4, transparent 30%),
+    radial-gradient(circle at 80% 70%, #ffc4d0, transparent 30%), #fff5f7;
+}
+
+.hero-content {
+  max-width: 900px;
+
+  position: relative;
+  z-index: 2;
+
+  animation: heroAppear 1.2s ease;
+}
+
+.small-title {
+  color: #c63857;
+
+  font-size: 16px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: clamp(45px, 8vw, 85px);
+
+  line-height: 1.05;
+
+  margin-bottom: 30px;
+}
+
+.hero h1 span {
+  display: block;
+
+  background: linear-gradient(135deg, #e84f6b, #9e163d);
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.hero-text {
+  max-width: 650px;
+
+  margin: auto;
+
+  font-size: 20px;
+
+  line-height: 1.8;
+
+  color: #76515a;
+}
+
+.scroll-text {
+  margin-top: 60px;
+
+  color: #b52b4d;
+
+  font-size: 14px;
+
+  animation: bounce 2s infinite;
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.hearts span {
+  position: absolute;
+
+  font-size: 30px;
+
+  animation: floating 7s infinite linear;
+
+  opacity: 0.6;
+}
+
+.hearts span:nth-child(1) {
+  left: 10%;
+  top: 20%;
+}
+
+.hearts span:nth-child(2) {
+  left: 80%;
+  top: 15%;
+
+  animation-delay: 1s;
+}
+
+.hearts span:nth-child(3) {
+  left: 20%;
+  top: 75%;
+
+  animation-delay: 2s;
+}
+
+.hearts span:nth-child(4) {
+  left: 75%;
+  top: 70%;
+
+  animation-delay: 3s;
+}
+
+.hearts span:nth-child(5) {
+  left: 50%;
+  top: 10%;
+
+  animation-delay: 4s;
+}
+
+/* =========================
+   COMMON SECTION
+========================= */
+
+.love-section,
+.memories-section {
+  padding: 110px 20px;
+}
+
+.section-title {
+  max-width: 750px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.section-title > span {
+  font-size: 40px;
+}
+
+.section-title h2 {
+  font-size: clamp(32px, 5vw, 52px);
+
+  margin: 15px 0;
+}
+
+.section-title p {
+  color: #79535d;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   LOVE CARD
+========================= */
+
+.love-card {
+  max-width: 800px;
+
+  margin: auto;
+
+  padding: 50px;
+
+  background: white;
+
+  border-radius: 30px;
+
+  box-shadow: 0 20px 60px rgba(82, 19, 36, 0.08);
+
+  line-height: 2;
+
+  font-size: 17px;
+
+  color: #62434b;
+}
+
+.love-card p {
+  margin-bottom: 20px;
+}
+
+.love-sign {
+  text-align: center;
+
+  color: #c22d4f;
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  margin-top: 30px;
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memories-section {
+  background: #fff;
+}
+
+.memory-grid {
+  max-width: 1100px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 30px;
+}
+
+.memory-card {
+  background: #fff7f8;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  box-shadow: 0 15px 40px rgba(82, 19, 36, 0.08);
+
+  transition: 0.4s;
+}
+
+.memory-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow: 0 25px 55px rgba(82, 19, 36, 0.15);
+}
+
+.image-wrapper {
+  height: 350px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  cursor: pointer;
+
+  transition: 0.5s;
+}
+
+.memory-card:hover img {
+  transform: scale(1.08);
+}
+
+.image-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  color: #b51f42;
+
+  font-weight: bold;
+
+  backdrop-filter: blur(8px);
+}
+
+.memory-info {
+  padding: 25px;
+}
+
+.memory-info h3 {
+  margin-bottom: 10px;
+
+  font-size: 21px;
+}
+
+.memory-info p {
+  color: #79535d;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final-section {
+  min-height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  background:
+    radial-gradient(circle at center, #ffd8e0, transparent 50%), #fff5f7;
+}
+
+.final-content {
+  animation: heroAppear 1s ease;
+}
+
+.big-heart {
+  font-size: 100px;
+
+  animation: heartbeat 1.5s infinite;
+}
+
+.final-section h2 {
+  font-size: clamp(40px, 7vw, 70px);
+
+  margin: 20px 0;
+}
+
+.final-section p {
+  font-size: 24px;
+
+  line-height: 1.7;
+
+  color: #704953;
+}
+
+.final-section h3 {
+  margin-top: 35px;
+
+  color: #bd294b;
+
+  font-size: 23px;
+}
+
+.forever {
+  margin-top: 25px;
+
+  font-size: 17px;
+
+  color: #79535d;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 35px 20px;
+
+  text-align: center;
+
+  background: #2c1018;
+
+  color: #ffe7ec;
+
+  line-height: 2;
+}
+
+/* =========================
+   IMAGE MODAL
+========================= */
+
+.image-modal {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(20, 5, 10, 0.92);
+
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+
+  z-index: 9999;
+}
+
+.image-modal.active {
+  display: flex;
+}
+
+.image-modal img {
+  max-width: 90%;
+
+  max-height: 85vh;
+
+  object-fit: contain;
+
+  border-radius: 15px;
+}
+
+.close-modal {
+  position: absolute;
+
+  top: 25px;
+  right: 30px;
+
+  border: none;
+
+  background: none;
+
+  color: white;
+
+  font-size: 50px;
+
+  cursor: pointer;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes boxAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heroAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-40px) rotate(15deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .password-box {
+    padding: 40px 25px;
+  }
+
+  .hero {
+    min-height: 90vh;
+  }
+
+  .hero-text {
+    font-size: 17px;
+  }
+
+  .love-section,
+  .memories-section {
+    padding: 80px 15px;
+  }
+
+  .love-card {
+    padding: 30px 25px;
+  }
+
+  .memory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-wrapper {
+    height: 320px;
+  }
+
+  .big-heart {
+    font-size: 75px;
+  }
+
+  .final-section p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .password-box h1 {
+    font-size: 27px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .small-title {
+    font-size: 12px;
+  }
+
+  .image-wrapper {
+    height: 280px;
+  }
+
+  .love-card {
+    font-size: 15px;
+  }
+
+  .section-title h2 {
+    font-size: 32px;
+  }
+}

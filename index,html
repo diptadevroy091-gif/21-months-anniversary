@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Happy 21 Months Anniversary ❤️</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- =========================
+       PASSWORD SCREEN
+  ========================== -->
+
+    <section class="password-screen" id="passwordScreen">
+      <div class="password-box">
+        <div class="lock">🔐</div>
+
+        <h1>Our Little Secret ❤️</h1>
+
+        <p>
+          This surprise is only for you...
+          <br />
+          Enter the password to unlock it 💕
+        </p>
+
+        <input
+          type="password"
+          id="passwordInput"
+          placeholder="Enter Password"
+        />
+
+        <button onclick="unlockSurprise()">Unlock My Heart ❤️</button>
+
+        <p class="error" id="errorMessage"></p>
+      </div>
+    </section>
+
+    <!-- =========================
+       MAIN SURPRISE
+  ========================== -->
+
+    <main id="surpriseContent" class="hidden">
+      <!-- HERO -->
+
+      <section class="hero">
+        <div class="hearts">
+          <span>❤️</span>
+          <span>💕</span>
+          <span>💖</span>
+          <span>💗</span>
+          <span>❤️</span>
+        </div>
+
+        <div class="hero-content">
+          <p class="small-title">A little surprise for my love</p>
+
+          <h1>
+            Happy
+            <span>21 Months</span>
+            Anniversary ❤️
+          </h1>
+
+          <p class="hero-text">
+            21 months of love, laughter, memories and countless beautiful
+            moments together.
+          </p>
+
+          <div class="scroll-text">↓ Scroll down, my love ↓</div>
+        </div>
+      </section>
+
+      <!-- LOVE MESSAGE -->
+
+      <section class="love-section">
+        <div class="section-title">
+          <span>💌</span>
+
+          <h2>To My Beautiful Wife</h2>
+
+          <p>Every moment with you is a memory I want to keep forever.</p>
+        </div>
+
+        <div class="love-card">
+          <p>My love,</p>
+
+          <p>
+            Today we completed 21 beautiful months together. It may sound like
+            just a number, but for me, every single day with you is special.
+          </p>
+
+          <p>
+            Thank you for being beside me, for understanding me, for making me
+            smile and for making my life more beautiful.
+          </p>
+
+          <p>
+            I don't know what the future holds, but I know one thing... I want
+            to create thousands of beautiful memories with you.
+          </p>
+
+          <p class="love-sign">I Love You Forever ❤️</p>
+        </div>
+      </section>
+
+      <!-- MEMORIES -->
+
+      <section class="memories-section">
+        <div class="section-title">
+          <span>📸</span>
+
+          <h2>Our Beautiful Memories</h2>
+
+          <p>Four moments, countless feelings ❤️</p>
+        </div>
+
+        <div class="memory-grid">
+          <!-- MEMORY 1 -->
+
+          <div class="memory-card">
+            <div class="image-wrapper">
+              <img src="./images/memory1.jpg" alt="Our Memory 1" />
+
+              <div class="image-number">01</div>
+            </div>
+
+            <div class="memory-info">
+              <h3>Our First Memory ❤️</h3>
+
+              <p>A moment that will always stay close to my heart.</p>
+            </div>
+          </div>
+
+          <!-- MEMORY 2 -->
+
+          <div class="memory-card">
+            <div class="image-wrapper">
+              <img src="./images/memory2.jpg" alt="Our Memory 2" />
+
+              <div class="image-number">02</div>
+            </div>
+
+            <div class="memory-info">
+              <h3>A Beautiful Moment 💕</h3>
+
+              <p>
+                Some moments become memories, and some memories become forever.
+              </p>
+            </div>
+          </div>
+
+          <!-- MEMORY 3 -->
+
+          <div class="memory-card">
+            <div class="image-wrapper">
+              <img src="./images/memory3.jpg" alt="Our Memory 3" />
+
+              <div class="image-number">03</div>
+            </div>
+
+            <div class="memory-info">
+              <h3>Just You & Me 💖</h3>
+
+              <p>Wherever we are, being together makes everything beautiful.</p>
+            </div>
+          </div>
+
+          <!-- MEMORY 4 -->
+
+          <div class="memory-card">
+            <div class="image-wrapper">
+              <img src="./images/memory4.jpg" alt="Our Memory 4" />
+
+              <div class="image-number">04</div>
+            </div>
+
+            <div class="memory-info">
+              <h3>Forever Together 💗</h3>
+
+              <p>One more beautiful memory for our forever story.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FINAL MESSAGE -->
+
+      <section class="final-section">
+        <div class="final-content">
+          <div class="big-heart">❤️</div>
+
+          <h2>Here's to Us</h2>
+
+          <p>
+            21 months down...
+            <br />
+            A lifetime to go. ♾️
+          </p>
+
+          <h3>I Love You More Than Words Can Say ❤️</h3>
+
+          <div class="forever">Forever Yours 💍</div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+
+      <footer>
+        <p>Made with ❤️ for the most special person in my life.</p>
+
+        <p>Happy 21 Months Anniversary 💕</p>
+      </footer>
+    </main>
+
+    <!-- IMAGE POPUP -->
+
+    <div class="image-modal" id="imageModal">
+      <button class="close-modal" onclick="closeImage()">×</button>
+
+      <img id="modalImage" src="" alt="Memory" />
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
