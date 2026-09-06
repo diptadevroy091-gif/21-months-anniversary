@@ -23,7 +23,7 @@ const musicPlayer = document.getElementById("musicPlayer");
 ========================= */
 
 function unlockSurprise() {
-  const password = "dipta&moni457100143";
+  const password = "dipta&moni456700";
 
   if (!passwordInput) {
     return;
